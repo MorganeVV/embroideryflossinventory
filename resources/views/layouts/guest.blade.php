@@ -24,10 +24,18 @@
             </a>
         </div>
 
-        <div
-            class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white overflow-hidden rounded-2xl shadow-lg dark:bg-gray-800">
             {{ $slot }}
         </div>
+
+        @if (isset($registerlink))
+            <div class="mt-5">
+                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+                    href="/register">
+                    {{ $registerlink }}
+                </a>
+            </div>
+        @endif
     </div>
 </body>
 
