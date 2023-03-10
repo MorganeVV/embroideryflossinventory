@@ -16,3 +16,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+myinventory.git-key.pem
+myinventory.git.pem
