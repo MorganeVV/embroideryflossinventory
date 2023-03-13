@@ -11,4 +11,17 @@ class DmcController extends Controller
     {
         return Dmc::all()->sortBy('number');
     }
+
+    public function search(Request $request)
+    {
+        $searchedDmc = Dmc::find($request->number);
+
+        $data['dmc'] = null;
+        $data['message'] = null;
+
+        if ($searchedDmc == null) $data['message'] = "DMC floss with number {$request->number} not found.";
+        else $data['dmc'] = $searchedDmc;
+
+        return $data;
+    }
 }
