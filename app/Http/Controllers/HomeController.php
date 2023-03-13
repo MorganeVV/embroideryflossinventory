@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Dmc;
 
 class HomeController extends Controller
 {
@@ -11,6 +12,9 @@ class HomeController extends Controller
     }
 
     public function showDashboard(){
-        return view('dashboard');
+        $allDmc = app('App\Http\Controllers\DmcController')->getAll();
+
+        return view('dashboard', compact('allDmc'));
     }
+
 }
